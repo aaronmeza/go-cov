@@ -6,7 +6,7 @@ go test -cover -covermode=set -coverprofile=$t $@ `go list ./... | grep -v tests
 
 # Add file exclusions to exclude-from-code-coverage.txt
 # One use case for this is removing generated code from the report. these files can be identified with the following command:
-#  grep -lr "DO NOT EDIT" | grep ".go" > exclude-from-code-coverage.txt 
+grep -lr "DO NOT EDIT" | grep ".go" >> exclude-from-code-coverage.txt 
 
 while read p || [ -n "$p" ] 
 do  
