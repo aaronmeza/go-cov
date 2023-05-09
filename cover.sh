@@ -23,5 +23,5 @@ echo "Total statements: $totalStatements"
 printf "Cooverage: %2.0f%%\n" "$(bc <<< "scale=2; $coveredStatements / $totalStatements * 100")"
 
 
-unlink $t
+echo "coverprofile saved to: $t"
 
