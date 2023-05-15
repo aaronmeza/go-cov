@@ -21,7 +21,7 @@ go tool cover -html=$t
 # the format of the coverprofile is
 # name.go:line.column,line.column numberOfStatements count
 
-coveredStatements=$(tail -n +2 $t | cut -d ' ' -f 3 | paste -sd+ - | bc -l)
+coveredStatements=$(tail -n +2 $t | cut -d ' ' -f 3,2 | sed 's/ /*/g' | paste -sd+ - | bc -l)
 echo "Covered statements: $coveredStatements"
 totalStatements=$(tail -n +2 $t | cut -d ' ' -f 2 | paste -sd+ - | bc -l)
 echo "Total statements: $totalStatements"
