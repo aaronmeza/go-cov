@@ -25,5 +25,5 @@ coveredStatements=$(tail -n +2 $t | cut -d ' ' -f 3 | paste -sd+ - | bc -l)
 echo "Covered statements: $coveredStatements"
 totalStatements=$(tail -n +2 $t | cut -d ' ' -f 2 | paste -sd+ - | bc -l)
 echo "Total statements: $totalStatements"
-printf "Cooverage: %2.0f%%\n" "$(bc <<< "scale=2; $coveredStatements / $totalStatements * 100")"
-echo "coverprofile saved to: $t\n"
+printf "Coverage: %2.0f%%\n" "$(bc <<< "scale=2; $coveredStatements / $totalStatements * 100")"
+echo "coverprofile saved to: $t"
